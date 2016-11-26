@@ -49,6 +49,11 @@ module.exports = function (ioIn) {
     });
 
     router.get('/intensity', (req, res) => {
+        if (!req.query.amount) {
+            res.send({ message: 'Missing Amount' });
+            return;
+        }
+
         intensityQueue.push(parseFloat(req.query.amount));
 
         throttledIntensity();
@@ -57,6 +62,11 @@ module.exports = function (ioIn) {
     });
 
     router.get('/rotation', (req, res) => {
+        if (!req.query.amount) {
+            res.send({ message: 'Missing Amount' });
+            return;
+        }
+
         rotationQueue.push(parseFloat(req.query.amount));
 
         throttledRotation();
@@ -65,6 +75,11 @@ module.exports = function (ioIn) {
     });
 
     router.get('/deltaEyes', (req, res) => {
+        if (!req.query.amount) {
+            res.send({ message: 'Missing Amount' });
+            return;
+        }
+
         deltaEyesQueue.push(parseFloat(req.query.amount));
 
         throttledDeltaEyes();
