@@ -1,0 +1,23 @@
+{
+  "name": "nausea-vr-api",
+  "version": "1.0.0",
+  "description": "We Help You Throw Up",
+  "main": "server.js",
+  "repository": {
+    "url": "git@github.com:timmui/nausea-vr-api.git",
+    "type": "git"
+  },
+  "author": "Tim Mui <timmui123@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.11.0"
+  },
+  "dependencies": {
+    "async": "^2.1.4",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "lodash": "^4.17.2",
+    "socket.io": "^1.6.0"
+  }
+}
