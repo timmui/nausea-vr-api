@@ -8,14 +8,16 @@
 
     <script>
         $(document).ready(function(){
-            $("#Overdrive").click(function(){
+            $("#Overdrive").click(function(e){
+                e.preventDefault();
+
                 $.get(location.origin+"/intensity?amount=4", function(data, status){
                 // alert("Data: " + data + "\nStatus: " + status);
                 });
             });
 
-            $('#intensity').submit(function() {
-                // get all the inputs into an array.
+            $('#intensity').submit(function(e) {
+                e.preventDefault();
 
                 var $inputs = $('#intensity :input');
                 //alert($inputs);
@@ -23,8 +25,8 @@
                         //alert("Data: " + data + "\nStatus: " + status);
                     });
             });
-            $('#headache').submit(function() {
-                // get all the inputs into an array.
+            $('#headache').submit(function(e) {
+                e.preventDefault();
 
                 var $inputs = $('#headache :input');
                 //alert($inputs);
