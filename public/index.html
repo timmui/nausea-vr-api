@@ -1,5 +1,64 @@
+<!DOCTYPE html>
 <html>
-    <body>
-        <h1>Hi</h1>
-    </body>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("#Overdrive").click(function(){
+        $.get("http://localhost:3030/intensity?amount=4", function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    });
+
+$('#intensity').submit(function() {
+    // get all the inputs into an array.
+    
+    var $inputs = $('#intensity :input');
+
+    // not sure if you wanted this, but I thought I'd add it.
+    // get an associative array of just the values.
+    /*var values = {};
+    $inputs.each(function() {
+        values[this.name] = $(this).val();
+    });*/
+    //action="http://localhost:3030/intensity"
+
+});
+});
+
+</script>
+</head>
+<body onload="startTimer()">
+
+<script>
+function startTimer() {
+    setTimeout(enableOverdrive, 3000)
+}
+function enableOverdrive() {
+    document.getElementById("Overdrive").style.visibility = "visible";
+}
+
+</script>
+
+<h1>Nausea VR</h1>
+
+<form id="intensity">
+<p>Intensity:
+    <input type="number" name="amount" min="0" max="1" step="0.1"></p>
+<input type="submit" value="Send">
+</form>
+
+</br>
+
+<form action="http://localhost:3030/deltaEyes" method="get">
+    <p>Headache:
+        <input type="number" name="quantity" min="0" max="0.1" step="0.01"></p>
+        <input type="submit" value="Send">
+ </form>
+
+<button id="Overdrive" style="visibility:hidden">OVERDRIVE</button>
+
+</body>
 </html>
