@@ -8,7 +8,7 @@
 $(document).ready(function(){
     $("#Overdrive").click(function(){
         $.get(location.origin+"/intensity?amount=4", function(data, status){
-            alert("Data: " + data + "\nStatus: " + status);
+           // alert("Data: " + data + "\nStatus: " + status);
         });
     });
 
@@ -16,18 +16,18 @@ $(document).ready(function(){
         // get all the inputs into an array.
         
         var $inputs = $('#intensity :input');
-        alert($inputs);
+        //alert($inputs);
         $.get(location.origin+"/intensity", $inputs, function(data, status){
-                alert("Data: " + data + "\nStatus: " + status);
+                //alert("Data: " + data + "\nStatus: " + status);
             });
     });
     $('#headache').submit(function() {
         // get all the inputs into an array.
         
         var $inputs = $('#headache :input');
-        alert($inputs);
+        //alert($inputs);
         $.get(location.origin+"/deltaEyes", $inputs, function(data, status){
-                alert("Data: " + data + "\nStatus: " + status);
+                //alert("Data: " + data + "\nStatus: " + status);
             });
     });
 
