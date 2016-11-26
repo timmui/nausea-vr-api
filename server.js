@@ -1,10 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
-
-// Express Config
 const app = express();
 const port = process.env.PORT || 3030;
-const routes = require('./routes')(io);
 
 // Socket Config
 const server = require('http').Server(app);
@@ -14,7 +11,7 @@ const io = require('socket.io')(server);
 require('./socketManager')(io);
 
 // Create Routes
-require('./routes')(io);
+const routes = require('./routes')(io);
 
 // Body parsing middleware
 app.use(bodyParser.json()); // for parsing application/json
