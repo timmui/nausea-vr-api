@@ -1,7 +1,12 @@
 h1{
     text-align: center;
 }
-
-Overdrive{
-    visibility: hidden;
+body{
+    text-align: center;
+}
+p{
+    font-size: 20px;
+}
+#overdrive_button{
+    margin: 50px;
 }
